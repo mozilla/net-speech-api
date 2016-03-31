@@ -33,6 +33,10 @@ public class WsDuplexRecognitionSession implements DuplexRecognitionSession {
 
 		@Override
 		public void onClose(int code, String reason, boolean remote) {
+		}
+
+		@Override
+                public void onCloseInitiated(int code, String reason) {
 			for (RecognitionEventListener listener : recognitionEventListeners) {
 				listener.onClose();
 			}
